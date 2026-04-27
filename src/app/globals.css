@@ -254,6 +254,30 @@ body {
 ::-webkit-scrollbar-track { background: #000; }
 ::-webkit-scrollbar-thumb { background: var(--neon-pink); border-radius: 4px; }
 
+/* CEO BG */
+.ceo-bg-item {
+  position: fixed;
+  z-index: 4;
+  pointer-events: none;
+  animation: ceoFloat ease-in-out infinite;
+  filter: drop-shadow(0 0 16px rgba(255, 190, 11, 0.7)) brightness(1.05);
+  border-radius: 50%;
+  opacity: 0.22;
+}
+.ceo-bg-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(255,190,11,0.6);
+}
+@keyframes ceoFloat {
+  0%,  100% { transform: translateY(0)    rotate(-3deg) scale(1); }
+  25%        { transform: translateY(-18px) rotate(4deg)  scale(1.05); }
+  50%        { transform: translateY(-8px)  rotate(-2deg) scale(0.97); }
+  75%        { transform: translateY(-24px) rotate(6deg)  scale(1.03); }
+}
+
 /* BONOBO BG */
 .bonobo-bg-item {
   position: fixed;

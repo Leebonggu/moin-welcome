@@ -32,6 +32,12 @@ function BonoboBoy({ size }: { size: number }) {
   );
 }
 
+const CEO_POSITIONS = [
+  { size: 110, style: { right: '3%',  top: '12%'  }, delay: '-1s',   dur: '8s' },
+  { size:  80, style: { left:  '3%',  top: '50%'  }, delay: '-3.5s', dur: '6s' },
+  { size:  95, style: { right: '20%', bottom: '12%' }, delay: '-5s', dur: '9s' },
+];
+
 const BONOBO_POSITIONS = [
   { size: 130, style: { left:  '2%',  top: '10%' }, delay: '0s',   dur: '7s' },
   { size:  85, style: { right: '4%',  top: '38%' }, delay: '-2.5s', dur: '9s' },
@@ -218,6 +224,18 @@ export default function WelcomePage({ config }: { config: PersonConfig }) {
     <>
       <div className="bg-chaos" />
       <div className="noise" />
+
+      {/* CEO background */}
+      {CEO_POSITIONS.map((c, i) => (
+        <div
+          key={i}
+          className="ceo-bg-item"
+          style={{ ...c.style, width: c.size, height: c.size, animationDuration: c.dur, animationDelay: c.delay }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/ceo.png" alt="대표님" />
+        </div>
+      ))}
 
       {/* Bonobo background characters */}
       {BONOBO_POSITIONS.map((b, i) => (
